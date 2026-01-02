@@ -1,0 +1,12 @@
+No. | Problem                | Input                       | Process                          | Output          |
+        | --- | ---------------------- | --------------------------- | -------------------------------- | --------------- |
+        | 1   | Temperature Conversion | Celsius                     | (C × 9/5) + 32                   | Fahrenheit      |
+        | 2   | Simple Interest        | P, R, T                     | (P × R × T) / 100                | Interest Amount |
+        | 3   | Percentage of Marks    | Marks obtained, Total marks | (Obtained ÷ Total) × 100         | Percentage      |
+        | 4   | Discount Price         | Price, Discount %           | price – (price × discount / 100) | Final Price     |
+        | 5   | EMI Calculation        | P, R, N                     | [P×R×(1+R)^N] / [(1+R)^N−1]      | EMI Amount      |
+        | 6   | Taxi Fare Estimation   | Distance                    | ₹50 + (₹15 × Distance)           | Total Fare      |
+        | 7   | Swap Two Numbers       | num1, num2                  | Use temp or arithmetic logic     | Swapped values  |
+        | 8   | Square and Cube        | Number                      | Square = n², Cube = n³           | Square & Cube   |
+        | 9   | Area of Triangle       | Base, Height                | ½ × Base × Height                | Area            |
+        | 10  | Simple Calculator      | num1, num2, operator        | Perform operation (+, −, ×, ÷)   | Result          |

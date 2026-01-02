@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Issue Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white shadow-lg hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-road text-purple-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">Road Tracker</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" onclick="showPage('issues')" class="text-gray-600 hover:text-purple-600 transition">
+                        <i class="fas fa-list mr-2"></i>Issues
+                    </a>
+                    <a href="#" onclick="showPage('add-issue')" class="text-gray-600 hover:text-purple-600 transition">
+                        <i class="fas fa-plus-circle mr-2"></i>Report Issue
+                    </a>
+                    <div class="relative">
+                        <button onclick="toggleDropdown()" class="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition">
+                            <i class="fas fa-user-circle text-2xl"></i>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 z-10">
+                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-50">
+                                <i class="fas fa-user mr-2"></i>Profile
+                            </a>
+                            <a href="#" onclick="logout()" class="block px-4 py-2 text-gray-800 hover:bg-purple-50">
+                                <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Page -->
+    <div id="login-page" class="min-h-screen flex items-center justify-center gradient-bg py-12 px-4">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-road text-purple-600 text-5xl mb-4"></i>
+                    <h2 class="text-3xl font-bold text-gray-800">Welcome Back</h2>
+                    <p class="text-gray-600 mt-2">Sign in to report road issues</p>
+                </div>
+                <form onsubmit="handleLogin(event)">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-envelope mr-2"></i>Email
+                        </label>
+                        <input type="email" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="your@email.com">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-lock mr-2"></i>Password
+                        </label>
+                        <input type="password" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="••••••••">
+                    </div>
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded text-purple-600 mr-2">
+                            <span class="text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-purple-600 hover:text-purple-700">Forgot password?</a>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                        Sign In
+                    </button>
+                </form>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">Don't have an account?
+                        <a href="#" onclick="showPage('signup')" class="text-purple-600 font-semibold hover:text-purple-700">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Page -->
+    <div id="signup-page" class="hidden min-h-screen flex items-center justify-center gradient-bg py-12 px-4">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-user-plus text-purple-600 text-5xl mb-4"></i>
+                    <h2 class="text-3xl font-bold text-gray-800">Create Account</h2>
+                    <p class="text-gray-600 mt-2">Join us to make roads safer</p>
+                </div>
+                <form onsubmit="handleSignup(event)">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-user mr-2"></i>Full Name
+                        </label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="John Doe">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-envelope mr-2"></i>Email
+                        </label>
+                        <input type="email" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="your@email.com">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-phone mr-2"></i>Phone Number
+                        </label>
+                        <input type="tel" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-lock mr-2"></i>Password
+                        </label>
+                        <input type="password" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="••••••••">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">
+                            <i class="fas fa-lock mr-2"></i>Confirm Password
+                        </label>
+                        <input type="password" required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                            placeholder="••••••••">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                        Create Account
+                    </button>
+                </form>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">Already have an account?
+                        <a href="#" onclick="showPage('login')" class="text-purple-600 font-semibold hover:text-purple-700">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Issues Listing Page -->
+    <div id="issues-page" class="hidden min-h-screen bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Road Issues</h1>
+                <p class="text-gray-600">Browse and track reported road problems in your area</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Category</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none">
+                            <option>All Categories</option>
+                            <option>Pothole</option>
+                            <option>Streetlight</option>
+                            <option>Garbage</option>
+                            <option>Flooding</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Status</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none">
+                            <option>All Status</option>
+                            <option>Pending</option>
+                            <option>Resolved</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Location</label>
+                        <input type="text" placeholder="Search location..."
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none">
+                    </div>
+                    <div class="flex items-end">
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition">
+                            <i class="fas fa-search mr-2"></i>Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issues Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Issue Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1625991119669-966111d8a1ce?w=500" alt="Pothole" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Pending
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-exclamation-triangle mr-1"></i>Pothole
+                            </span>
+                            <span class="text-gray-500 text-sm">
+                                <i class="fas fa-clock mr-1"></i>2 days ago
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Large Pothole on Main Street</h3>
+                        <p class="text-gray-600 mb-4">Deep pothole causing traffic issues near the downtown intersection.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2 text-purple-600"></i>
+                                <span class="text-sm">Main St, Downtown</span>
+                            </div>
+                            <button class="flex items-center space-x-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="font-semibold">24</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500" alt="Streetlight" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Resolved
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-lightbulb mr-1"></i>Streetlight
+                            </span>
+                            <span class="text-gray-500 text-sm">
+                                <i class="fas fa-clock mr-1"></i>5 days ago
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Broken Street Light</h3>
+                        <p class="text-gray-600 mb-4">Multiple streetlights not working in residential area causing safety concerns.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2 text-purple-600"></i>
+                                <span class="text-sm">Oak Avenue</span>
+                            </div>
+                            <button class="flex items-center space-x-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="font-semibold">12</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover cursor-pointer">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=500" alt="Flooding" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Pending
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-water mr-1"></i>Flooding
+                            </span>
+                            <span class="text-gray-500 text-sm">
+                                <i class="fas fa-clock mr-1"></i>1 day ago
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Road Flooding After Rain</h3>
+                        <p class="text-gray-600 mb-4">Severe water accumulation on road due to blocked drainage system.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2 text-purple-600"></i>
+                                <span class="text-sm">River Road</span>
+                            </div>
+                            <button class="flex items-center space-x-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="font-semibold">38</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Issue Page -->
+    <div id="add-issue-page" class="hidden min-h-screen bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-2">Report a Road Issue</h1>
+                    <p class="text-gray-600">Help us improve road safety by reporting problems you encounter</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <form onsubmit="handleAddIssue(event)">
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">
+                                <i class="fas fa-heading mr-2"></i>Issue Title *
+                            </label>
+                            <input type="text" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                                placeholder="e.g., Large pothole on Main Street">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">
+                                <i class="fas fa-list mr-2"></i>Category *
+                            </label>
+                            <select required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition">
+                                <option value="">Select a category</option>
+                                <option value="pothole">Pothole</option>
+                                <option value="streetlight">Broken Streetlight</option>
+                                <option value="garbage">Garbage Accumulation</option>
+                                <option value="flooding">Road Flooding</option>
+                                <option value="signage">Damaged Signage</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">
+                                <i class="fas fa-align-left mr-2"></i>Description *
+                            </label>
+                            <textarea required rows="5"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                                placeholder="Provide detailed information about the issue..."></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Location
+                            </label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                                placeholder="e.g., Main St & 5th Avenue, Downtown">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">
+                                <i class="fas fa-image mr-2"></i>Upload Photo *
+                            </label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-purple-500 transition cursor-pointer">
+                                <input type="file" id="fileInput" accept="image/*" class="hidden" onchange="handleFileSelect(event)">
+                                <label for="fileInput" class="cursor-pointer">
+                                    <i class="fas fa-cloud-upload-alt text-5xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600 mb-2">Click to upload or drag and drop</p>
+                                    <p class="text-sm text-gray-500">PNG, JPG, or JPEG (max. 5MB)</p>
+                                </label>
+                                <div id="preview" class="mt-4 hidden">
+                                    <img id="previewImg" class="max-h-64 mx-auto rounded-lg shadow-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <button type="submit"
+                                class="flex-1 bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i>Submit Report
+                            </button>
+                            <button type="button" onclick="showPage('issues')"
+                                class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+                                <i class="fas fa-times mr-2"></i>Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page navigation
+        function showPage(page) {
+            document.querySelectorAll('[id$="-page"]').forEach(p => p.classList.add('hidden'));
+            document.getElementById(page + '-page').classList.remove('hidden');
+            
+            if (page === 'login' || page === 'signup') {
+                document.getElementById('navbar').classList.add('hidden');
+            } else {
+                document.getElementById('navbar').classList.remove('hidden');
+            }
+        }
+
+        // Login handler
+        function handleLogin(e) {
+            e.preventDefault();
+            showPage('issues');
+        }
+
+        // Signup handler
+        function handleSignup(e) {
+            e.preventDefault();
+            showPage('issues');
+        }
+
+        // Add issue handler
+        function handleAddIssue(e) {
+            e.preventDefault();
+            alert('Issue reported successfully!');
+            showPage('issues');
+        }
+
+        // Dropdown toggle
+        function toggleDropdown() {
+            document.getElementById('dropdown').classList.toggle('hidden');
+        }
+
+        // Logout
+        function logout() {
+            showPage('login');
+        }
+
+        // File upload preview
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('preview').classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(e) {
+            if (!e.target.matches('.fa-chevron-down') && !e.target.matches('.fa-user-circle')) {
+                const dropdown = document.getElementById('dropdown');
+                if (!dropdown.classList.contains('hidden')) {
+                    dropdown.classList.add('hidden');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

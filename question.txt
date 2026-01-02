@@ -1,0 +1,87 @@
+
+"""
+task1
+offer.py
+
+celebrate in style with allen Solly Rs. 1000  OFF using ASDIW1000 code
+"""
+
+"""
+task2
+transaction.py
+
+received 50000 in your kotakbank AC 9526562826 from arshz03@okicici on 19-10-2025
+UPI ref.565797808981
+"""
+
+
+"""
+task3
+booking.py
+
+Dear MALLIKA PUSHKARAN (UHID :(UHID:DH2025/00082038)),
+you have checked in for your appointment 
+with Dr.DR HARISH VALSAN on 17-Oct, Token :1 at Daya
+"""
+
+
+
+
+🧠 Logic Building – Input / Process / Output Table
+
+🔹 1️⃣ VARIABLES – Storing & Displaying Values
+
+
+    Focus: Understanding how to store data and display it using variables.
+
+
+        | No. | Problem                  | Input                    | Process                                          | Output               |
+        | --- | ------------------------ | ------------------------ | ------------------------------------------------ | -------------------- |
+        | 1   | Display Your Details     | Name, Age, City          | Store and print                                  | Personal information |
+        | 2   | Average of 3 Numbers     | n1, n2, n3               | (n1 + n2 + n3) / 3                               | Average              |
+        | 3   | Area of Circle           | Radius                   | 3.14 × r × r                                     | Area                 |
+        | 4   | Perimeter of Rectangle   | Length, Breadth          | 2 × (L + B)                                      | Perimeter            |
+        | 5   | Convert Hours            | Hours                    | hr × 60 (minutes), hr × 3600 (seconds)           | Minutes & Seconds    |
+        | 6   | Speed Calculation        | Distance, Time           | Distance ÷ Time                                  | Speed                |
+        | 7   | Currency Converter       | Amount (INR), Rate       | INR × Rate                                       | Converted Amount     |
+        | 8   | BMI Calculation          | Weight, Height           | Weight / (Height × Height)                       | BMI Value + Category |
+        | 9   | Employee Salary Slip     | Basic Pay                | HRA=20%, DA=10%, Gross=Basic+HRA+DA              | Gross Salary         |
+        | 10  | Selling Price of Product | Purchase Price, Profit % | Purchase Price + (Purchase Price × Profit / 100) | Selling Price        |
+
+    
+        
+
+    
+    🔹 2️⃣ OPERATORS – Performing Calculations
+
+        Focus: Arithmetic, assignment, and comparison operators.
+
+        | No. | Problem                | Input                       | Process                          | Output          |
+        | --- | ---------------------- | --------------------------- | -------------------------------- | --------------- |
+        | 1   | Temperature Conversion | Celsius                     | (C × 9/5) + 32                   | Fahrenheit      |
+        | 2   | Simple Interest        | P, R, T                     | (P × R × T) / 100                | Interest Amount |
+        | 3   | Percentage of Marks    | Marks obtained, Total marks | (Obtained ÷ Total) × 100         | Percentage      |
+        | 4   | Discount Price         | Price, Discount %           | price – (price × discount / 100) | Final Price     |
+        | 5   | EMI Calculation        | P, R, N                     | [P×R×(1+R)^N] / [(1+R)^N−1]      | EMI Amount      |
+        | 6   | Taxi Fare Estimation   | Distance                    | ₹50 + (₹15 × Distance)           | Total Fare      |
+        | 7   | Swap Two Numbers       | num1, num2                  | Use temp or arithmetic logic     | Swapped values  |
+        | 8   | Square and Cube        | Number                      | Square = n², Cube = n³           | Square & Cube   |
+        | 9   | Area of Triangle       | Base, Height                | ½ × Base × Height                | Area            |
+        | 10  | Simple Calculator      | num1, num2, operator        | Perform operation (+, −, ×, ÷)   | Result          |
+
+    
+    🔹 3️⃣ DECISION MAKING – if / elif / else
+
+        | No. | Problem                     | Input            | Process                                                     | Output                        |
+        | --- | --------------------------- | ---------------- | ----------------------------------------------------------- | ----------------------------- |
+        | 1   | Check Even or Odd           | Number           | Check remainder when divided by 2                           | “Even” / “Odd”                |
+        | 2   | Largest of 3 Numbers        | num1, num2, num3 | Compare all three                                           | Largest number                |
+        | 3   | Grade Calculation           | Marks            | Use conditions for grade range                              | Grade (A/B/C/Fail)            |
+        | 4   | Voter Eligibility           | Age              | Check if ≥ 18                                               | “Eligible” / “Not Eligible”   |
+        | 5   | Check Leap Year             | Year             | Divisible by 4 and not 100, or divisible by 400             | “Leap Year” / “Not Leap Year” |
+        | 6   | Electricity Bill Estimation | Units            | Apply rate per range (0–100 → ₹5, 101–200 → ₹7, >200 → ₹10) | Total Bill                    |
+        | 7   | Check Divisibility          | Number           | Check divisible by 5 and 11                                 | “Divisible” / “Not Divisible” |
+        | 8   | Check Vowel or Consonant    | Character        | Check if in (a, e, i, o, u)                                 | “Vowel” / “Consonant”         |
+        | 9   | BMI Category                | BMI Value        | if <18.5 underweight, elif <25 normal, else overweight      | Category                      |
+        | 10  | Temperature Condition       | Temperature      | if <20 “Cold”, elif <35 “Normal”, else “Hot”                | Weather Category              |
+

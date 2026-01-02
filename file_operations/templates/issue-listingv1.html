@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Road Issue Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <span class="text-white text-xl font-bold">Road Issue Tracker</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="add-issue.html" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition">
+                        + Report Issue
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-purple-300 rounded-full flex items-center justify-center">
+                            <span class="text-purple-900 font-semibold text-sm">S</span>
+                        </div>
+                        <span class="text-white font-medium">Sajay</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <h1 class="text-3xl font-bold text-gray-900">Road Issues Dashboard</h1>
+            <p class="text-gray-600 mt-1">Track and manage reported road problems in your area</p>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Issues</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">127</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Pending</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">89</p>
+                    </div>
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Resolved</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">38</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-indigo-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">This Month</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">24</p>
+                    </div>
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <!-- <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex flex-wrap gap-4 items-center">
+                <div>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+                        <option>All Categories</option>
+                        <option>Pothole</option>
+                        <option>Streetlight</option>
+                        <option>Sign Damage</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+                        <option>All Status</option>
+                        <option>Pending</option>
+                        <option>Resolved</option>
+                    </select>
+                </div>
+                <div class="flex-1">
+                    <input type="text" placeholder="Search issues..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Issues Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Issue Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400" alt="Pothole" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">PENDING</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Pothole</span>
+                        <span class="text-gray-500 text-sm">2 days ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Pothole near bus stop</h3>
+                    <p class="text-gray-600 text-sm mb-4">Huge pothole blocking one lane causing traffic issues</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Main Road, Kochi
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-purple-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            <span class="font-semibold">3 confirmations</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issue Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400" alt="Streetlight" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">PENDING</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">Streetlight</span>
+                        <span class="text-gray-500 text-sm">5 days ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Broken streetlight</h3>
+                    <p class="text-gray-600 text-sm mb-4">Streetlight not working, making area unsafe at night</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Park Avenue, Thrissur
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-purple-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            <span class="font-semibold">7 confirmations</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issue Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400" alt="Road sign" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">RESOLVED</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Sign Damage</span>
+                        <span class="text-gray-500 text-sm">1 week ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Damaged road sign</h3>
+                    <p class="text-gray-600 text-sm mb-4">Stop sign knocked over after accident</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        MG Road, Kochi
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-green-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-semibold">Resolved</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issue Card 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400" alt="Traffic" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">PENDING</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">Traffic Signal</span>
+                        <span class="text-gray-500 text-sm">1 day ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Malfunctioning traffic light</h3>
+                    <p class="text-gray-600 text-sm mb-4">Traffic signal stuck on red for extended periods</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Civil Line Road, Thrissur
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-purple-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            <span class="font-semibold">12 confirmations</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issue Card 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?w=400" alt="Road marking" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">PENDING</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">Road Marking</span>
+                        <span class="text-gray-500 text-sm">3 days ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Faded zebra crossing</h3>
+                    <p class="text-gray-600 text-sm mb-4">Pedestrian crossing markings completely worn out</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Round South, Thrissur
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-purple-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            <span class="font-semibold">5 confirmations</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issue Card 6 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-400 relative">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400" alt="Debris" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">RESOLVED</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Debris</span>
+                        <span class="text-gray-500 text-sm">2 weeks ago</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Construction debris on road</h3>
+                    <p class="text-gray-600 text-sm mb-4">Large pile of construction material blocking lane</p>
+                    <div class="flex items-center text-gray-500 text-sm mb-4">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Shornur Road, Thrissur
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t">
+                        <div class="flex items-center text-green-600">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-semibold">Resolved</span>
+                        </div>
+                        <button class="text-purple-600 hover:text-purple-700 font-semibold">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+            <p>&copy; 2025 Road Issue Tracker. Making roads safer together.</p>
+        </div>
+    </footer>
+</body>
+</html>

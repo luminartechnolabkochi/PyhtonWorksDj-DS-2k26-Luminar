@@ -1,0 +1,41 @@
+# Titanic Dataset Practice Questions
+
+## Beginner Level (Easy)
+
+1. How many passengers are there in the dataset?
+2. How many passengers survived and how many did not survive?
+3. Count male vs female passengers.
+4. Find the number of passengers in each passenger class (Pclass).
+5. Find the youngest and oldest passenger.
+6. Calculate the average age of passengers.
+7. How many passengers have missing age values?
+8. List the first 10 passenger names.
+9. How many passengers embarked from each port (S, C, Q)?
+10. How many children (Age < 10) were on board? How many survived?
+
+
+## Intermediate Level
+
+1. Calculate the survival rate (percentage).
+2. Compare survival rate by gender. Who had a better chance?
+3. Compare survival rate across passenger classes.
+4. Calculate the average fare paid by each class.
+5. Find the passenger who paid the highest fare.
+6. Find the distribution of siblings/spouses (SibSp).
+7. Group passengers by age groups: Child (0–12), Teen (13–19), Adult (20–50), Senior (50+). Count each group.
+8. How many passengers traveled alone (SibSp = 0 and Parch = 0)?
+9. Find the average age of survivors vs non-survivors.
+10. List all female passengers who survived and were in 1st class.
+
+## Advanced / Hard Level
+
+1. Build a survival prediction manually using simple rules (e.g., female + 1st class more likely to survive) and calculate prediction accuracy.
+2. Find correlation between numerical fields such as Age, SibSp, Parch, Fare, and Survived.
+3. Analyze family size impact: Calculate family size (SibSp + Parch + 1) and survival rate for each family size.
+4. Identify passengers with the same last name (family groups). Check if they survived together.
+5. Calculate the median age for each Pclass and compare survival.
+6. Investigate whether fare affected survival probability by splitting fare into quartiles.
+7. Detect outliers in fare using the IQR method and identify passengers who paid unusually high fares.
+8. Compute survival probability based on multiple features (Sex, Pclass, Age group).
+9. Find the top 10 most common first names among passengers.
+10. Determine if passengers with cabin numbers (non-missing Cabin values) had higher survival rates.

@@ -1,0 +1,58 @@
+
+# block start
+# decsion making 
+    #if :
+    #else :
+    #elif :
+
+# looping 
+    #for :
+    #while :
+
+# function
+    #def:
+
+# class
+    #class :
+
+# error-handling
+    #try :
+    #except :
+    #finally :
+
+
+# movies{
+
+#malayalam{
+#         "lokha"
+#         "thudarum"
+#         "abcd"
+#     }
+# thamil{
+#         "kooli"
+#         "thupakki"
+#         "jailer"
+#     }
+# kannada{
+#         "kgf"
+#         "bahubali1"
+#         "bahubali2"
+#     }
+# }
+
+
+# movies:
+
+#     malayalam:
+#         "lokha"
+#          "thudarum"
+#     thamil:
+#           "kooli"
+# #         "thupakki"
+# #         "jailer"
+
+
+# menu=>breakfast[tea,coffe,idly,dosa],lunch[meals,biriyani,friedrice],dinner[arabian-rice,fruits]
+
+
+

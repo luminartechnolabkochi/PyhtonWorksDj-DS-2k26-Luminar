@@ -1,0 +1,77 @@
+
+Python Features
+
+Python Application
+
+Environment Setup 
+        >install python interpreter
+        >python --version
+        >pip(python package manager)
+        pandas
+        >pip install pandas
+        numpy
+        >pip intsall numpy
+        matplotlib
+        >pip install matplotlib
+
+        >pip list
+        >editor (vscode)
+
+identifier
+
+varibles 
+
+datatype:[int,float,string,boolean,complex , collection type(list,tuple,set,dictionary)]
+
+operators:[Arith,logical,relational,assignment]
+
+decision making:[if,,,if..else,if..elif...else,match case]
+
+looping[while,for] break,continue
+
+functions : 
+        *args,**kwargs
+        decorators(@decoratorname)
+        lambdafunction
+        [*recursion]
+
+string:string and string methods
+list:list and list methods
+tuple:tuple and tuple methods
+set:set and set methods
+dict:dict and dict methods
+nested colletion
+comprehension
+fileoperations:r,w,a open()
+csv file process-> list of dictionary [csv.py]
+errorhandling:
+
+    try
+    except
+    finally
+    assert
+    raise
+
+object oriented Programming
+
+    class
+    object
+    constructor __init__
+    self
+    super()
+
+    inheritance(Single,multilevel,multiple)
+
+    polymorphism(method overloading,method overriding)
+
+    abstraction(ABC,@abstractmethod)
+
+deepcopy and shallowcopy
+
+map
+filter
+reduce
+any
+all
+
+DBMS(Mysql)

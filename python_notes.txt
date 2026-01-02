@@ -1,0 +1,1129 @@
+🐍 Python
+==========
+
+1. What is Python?
+
+    .Python is a high-level, interpreted, object-oriented programming language.
+    .It’s known for its simplicity, readability, and versatility.
+    .Used in web development, data science, automation, AI, and scripting.
+
+2. Identifiers
+    
+    .Identifiers are names used to identify variables, functions, classes, or other objects.
+    
+    .They help uniquely name entities in a program.
+
+    ✅ Rules for Identifiers:
+
+        . Must start with a letter (A–Z or a–z) or an underscore (_).
+
+        . Can contain letters, digits (0–9), and underscores. 
+        
+        . Case-sensitive (name ≠ Name).
+
+        . Cannot use reserved keywords (like for, if, class, def etc.).
+
+        . No spaces or special characters (@, $, %) allowed. 
+
+    
+    🔹 Valid Identifiers:
+
+            name
+            student_name
+            _age
+            rollNumber123
+   
+    🔹 Invalid Identifiers:
+
+        1name       # starts with digit ❌
+        student-name # contains hyphen ❌
+        for          # keyword ❌
+
+3. Variables
+
+    .Variables are containers used to store data.
+
+    .No need to declare type; Python determines it automatically (dynamic typing).
+
+    .Created when you assign a value using =.
+
+    🔹 Example:
+
+        name = "Alice"
+        
+        age = 25
+        
+        height = 5.6
+    
+    ✅ Variable Naming Rules:
+
+        .Must follow identifier rules.
+
+        .Should be meaningful (total_marks better than tm).
+
+        .Convention: use snake_case for variable names.
+
+    4. Multiple Assignments
+
+        You can assign multiple variables in a single line.
+
+        🔹 Example:
+
+            x, y, z = 10, 20, 30
+            name = age = city = "Unknown"
+
+6. Data Types in Python
+
+    A data type defines the type or nature of data that a variable can hold.
+    
+    It tells the interpreter how to store and manipulate the value associated with that variable.
+
+    In simple terms:
+        
+        A data type specifies what kind of value a variable can store — such as numbers, text, lists, or boolean values.
+
+    Python has several built-in data types grouped as:
+
+    | Category      | Data Type                 | Example                          |
+    | ------------- | ------------------------- | -------------------------------- |
+    | **Numeric**   | `int`, `float`, `complex` | `10`, `3.14`, `2 + 3j`           |
+    | **Text**      | `str`                     | `"Hello"`                        |
+    | **Boolean**   | `bool`                    | `True`, `False`                  |
+    | **Sequence**  | `list`, `tuple`, `range`  | `[1,2,3]`, `(1,2,3)`, `range(5)` |
+    | **Set**       | `set`, `frozenset`        | `{1,2,3}`                        |
+    | **Mapping**   | `dict`                    | `{"name":"John", "age":25}`      |
+    | **None Type** | `None`                    | `None`                           |
+
+
+7. Type Checking
+
+    Use type() to find the data type of a variable.
+
+    🔹 Example:
+
+        x = 10
+        y = "Hello"
+        print(type(x))   # <class 'int'>
+        print(type(y))   # <class 'str'>
+
+
+8.python Operators?
+  ==================    
+    
+    .Operators are special symbols or keywords used to perform operations on variables and values.
+    
+    .They help manipulate data and make decisions in a program.
+
+    Types of Operators in Python
+
+          | Category                 | Description                     | Examples                                        |                         |
+          | ------------------------ | ------------------------------- | ----------------------------------------------- | ----------------------- |
+          | **Arithmetic Operators** | Perform mathematical operations | `+`, `-`, `*`, `/`, `%`, `**`, `//`             |                         |
+          | **Comparison Operators** | Compare two values              | `==`, `!=`, `>`, `<`, `>=`, `<=`                |                         |
+          | **Logical Operators**    | Combine conditional statements  | `and`, `or`, `not`                              |                         |
+          | **Assignment Operators** | Assign values to variables      | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=` |                         |
+          | **Bitwise Operators**    | Work with binary data           | `&`, `                                          | `, `^`, `~`, `<<`, `>>` |
+          | **Membership Operators** | Test membership in sequences    | `in`, `not in`                                  |                         |
+          | **Identity Operators**   | Compare memory locations        | `is`, `is not`                                  |                         |
+
+
+    Arithmetic Operators
+
+        | Operator | Description         | Example   | Result     |
+        | -------- | ------------------- | --------- | ---------- |
+        | `+`      | Addition            | `10 + 5`  | `15`       |
+        | `-`      | Subtraction         | `10 - 5`  | `5`        |
+        | `*`      | Multiplication      | `10 * 5`  | `50`       |
+        | `/`      | Division            | `10 / 3`  | `3.333...` |
+        | `%`      | Modulus (remainder) | `10 % 3`  | `1`        |
+        | `**`     | Exponentiation      | `2 ** 3`  | `8`        |
+        | `//`     | Floor Division      | `10 // 3` | `3`        |
+
+    
+    Comparison Operators
+
+        | Operator | Description              | Example    | Result  |
+        | -------- | ------------------------ | ---------- | ------- |
+        | `==`     | Equal to                 | `10 == 5`  | `False` |
+        | `!=`     | Not equal to             | `10 != 5`  | `True`  |
+        | `>`      | Greater than             | `10 > 5`   | `True`  |
+        | `<`      | Less than                | `10 < 5`   | `False` |
+        | `>=`     | Greater than or equal to | `10 >= 10` | `True`  |
+        | `<=`     | Less than or equal to    | `10 <= 5`  | `False` |
+
+
+    Logical Operators
+
+        | Operator | Description                            | Example                | Result  |
+        | -------- | -------------------------------------- | ---------------------- | ------- |
+        | `and`    | True if both conditions are True       | `(10 > 5) and (5 < 8)` | `True`  |
+        | `or`     | True if at least one condition is True | `(10 < 5) or (5 < 8)`  | `True`  |
+        | `not`    | Reverses the result                    | `not(10 > 5)`          | `False` |
+        
+    
+    Assignment Operators
+
+        | Operator | Example   | Equivalent To    |
+        | -------- | --------- | ---------------- |
+        | `=`      | `x = 10`  | Assigns value 10 |
+        | `+=`     | `x += 5`  | `x = x + 5`      |
+        | `-=`     | `x -= 5`  | `x = x - 5`      |
+        | `*=`     | `x *= 5`  | `x = x * 5`      |
+        | `/=`     | `x /= 5`  | `x = x / 5`      |
+        | `%=`     | `x %= 5`  | `x = x % 5`      |
+        | `**=`    | `x **= 2` | `x = x ** 2`     |
+        | `//=`    | `x //= 3` | `x = x // 3`     |
+
+    
+    Membership Operators
+
+        Used to check if a value exists in a sequence (like list, string, tuple).
+
+        | Operator | Description                       | Example              | Result |
+        | -------- | --------------------------------- | -------------------- | ------ |
+        | `in`     | Returns True if value present     | `'a' in 'apple'`     | `True` |
+        | `not in` | Returns True if value not present | `'x' not in 'apple'` | `True` |
+
+    
+    Identity Operators
+        
+        Used to check whether two variables refer to the same object in memory.
+
+        | Operator | Description                             | Example      | Result       |
+        | -------- | --------------------------------------- | ------------ | ------------ |
+        | `is`     | True if both refer to same object       | `x is y`     | `True/False` |
+        | `is not` | True if they refer to different objects | `x is not y` | `True/False` |
+
+
+Decision Making
+================
+
+    Decision making allows a program to choose different actions based on certain conditions.
+   It helps your program make choices — just like humans do.
+
+   🔹 Example:
+
+        if temperature > 30:
+            print("It’s hot outside!")
+        else:
+            print("Nice weather!")
+
+    Types of Decision-Making Statements in Python
+    -----------------------------------------------
+
+        1.if statement
+
+        2.if...else statement
+
+        3.if...elif...else statement
+
+        4.match...case statement (introduced in Python 3.10)
+
+
+        🧩 1. if Statement
+
+            ✅ Used to execute a block of code only if a condition is True.
+
+            🔹 Syntax:
+                
+                if condition:
+                    statement(s)
+            
+            🔹 Example:
+
+                age = 18
+
+                if age >= 18:
+
+                    print("You are eligible to vote.")
+
+        
+        🧩 2. if...else Statement
+
+            ✅ Used when we want one block of code to run if the condition is True, and another block if it’s False.
+
+            🔹 Syntax:
+
+                    if condition:
+                        statement(s)
+                    else:
+                        statement(s)
+            
+            🔹 Example:
+
+                number = 5
+
+                if number % 2 == 0:
+
+                    print("Even number")
+
+                else:
+
+                    print("Odd number")
+        
+        
+        🧩 3. if...elif...else Statement
+
+            ✅ Used when you need to check multiple conditions.
+
+            🔹 Syntax:
+                    if condition1:
+                        statement(s)
+                    elif condition2:
+                        statement(s)
+                    elif condition3:
+                        statement(s)
+                    else:
+                        statement(s)
+            
+            🔹 Example:
+
+                    marks = 85
+
+                    if marks >= 90:
+                        print("Grade A+")
+                    elif marks >= 75:
+                        print("Grade A")
+                    elif marks >= 60:
+                        print("Grade B")
+                    else:
+                        print("Grade C")
+            🟢 Note:
+
+                Only the first True condition is executed.
+
+                The else block is optional.
+
+        🧩 4. match...case Statement (Python 3.10+)
+
+            ✅ Used for pattern matching — similar to switch in other languages.
+
+            🔹 Syntax:
+                    match variable:
+                    case value1:
+                        statement(s)
+                    case value2:
+                        statement(s)
+                    case _:
+                        statement(s)   # default case
+
+            🔹 Example:
+
+                    day = 3
+                    match day:
+                        case 1:
+                            print("Monday")
+                        case 2:
+                            print("Tuesday")
+                        case 3:
+                            print("Wednesday")
+                        case 4:
+                            print("Thursday")
+                        case 5:
+                            print("Friday")
+                        case 6:
+                            print("Saturday")
+                        case 7:
+                            print("Sunday")
+                        case _:
+                            print("Invalid day")
+
+            🟢 Notes:
+
+                The underscore _ acts as a default case (similar to else).
+
+                You can also combine multiple cases:
+
+                match day:
+                    case 1 | 2 | 3 | 4 | 5:
+
+                        print("Weekday")
+
+                    case 6 | 7:
+                        print("Weekend")
+
+
+🔁 Looping in Python
+=======================
+
+    Looping allows you to execute a block of code repeatedly as long as a certain condition is true or for a fixed number of iterations.
+
+    It helps reduce repetition and makes programs more efficient.
+
+
+    🌱 Why Loops?
+
+        Without loops, we would need to write the same code multiple times.
+
+        🔹 Example (without loop):
+
+            print("Hello")
+            print("Hello")
+            print("Hello")
+            print("Hello")
+            print("Hello")
+
+        🔹 Example (with loop):
+
+            for i in range(5):
+                print("Hello")
+
+        🌀 Types of Loops in Python
+
+            | Type of Loop   | Description                                                           |
+            | -------------- | --------------------------------------------------------------------- |
+            | **while loop** | Repeats a block of code **as long as a condition is True**.           |
+            | **for loop**   | Iterates over a **sequence** (like list, string, tuple, range, etc.). |
+
+        
+        🧩 1. while Loop
+
+            ✅ Used when you don’t know in advance how many times you want to repeat — loop continues until a condition becomes False.
+
+            🔹 Syntax:
+
+                while condition:
+                    statement(s)
+
+            🔹 Example:
+
+                i = 1
+                while i <= 5:
+                    print("Count:", i)
+                    i += 1
+
+            🧠 Important Notes:
+
+                . The condition is checked before every iteration.
+
+                . If the condition never becomes False, it leads to an infinite loop.
+
+                . Always make sure to update your loop variable inside the loop.
+
+        🧩 2. for Loop
+
+            ✅ Used when you know how many times to iterate — or when looping through a sequence (like list, string, range, etc.).
+
+            🔹 Syntax:
+
+                for variable in sequence:
+                    
+                    statement(s)
+
+            🔹 Example:
+
+                for i in range(5):
+
+                    print("Value:", i)
+
+            🔹 Example: Looping Over a List
+
+                fruits = ["apple", "banana", "cherry"]
+
+                for fruit in fruits:
+
+                    print(fruit)
+
+            🔹 Example: Looping Through a String
+
+                for ch in "Python":
+                    print(ch)
+
+            🧮 Example: Using range()
+
+                The range() function generates a sequence of numbers.
+
+                | Syntax                     | Description       | Example         | Output    |
+                | -------------------------- | ----------------- | --------------- | --------- |
+                | `range(n)`                 | 0 to n-1          | `range(5)`      | 0,1,2,3,4 |
+                | `range(start, stop)`       | start to stop-1   | `range(2,6)`    | 2,3,4,5   |
+                | `range(start, stop, step)` | Increment by step | `range(1,10,2)` | 1,3,5,7,9 |
+
+            
+            🔹 Example: Print Even Numbers from 2 to 10
+
+                for i in range(2, 11, 2):
+                    print(i)
+
+        🧱 Loop Control Statements
+
+            used to change the normal flow of loop execution.
+
+            | Statement  | Description                                         |
+            | ---------- | --------------------------------------------------- |
+            | `break`    | Exits the loop immediately                          |
+            | `continue` | Skips the current iteration and continues with next |
+            | `pass`     | Does nothing (used as a placeholder)                |
+
+
+📋 Operator Precedence (Simplified Table)
+
+
+    | Priority | Operators                        | Description                                  |
+    | -------- | -------------------------------- | -------------------------------------------- |
+    | 1️⃣      | `()`                             | Parentheses                                  |
+    | 2️⃣      | `**`                             | Exponent (power)                             |
+    | 3️⃣      | `*`, `/`, `//`, `%`              | Multiplication, Division, Floor Div, Modulus |
+    | 4️⃣      | `+`, `-`                         | Addition and Subtraction                     |
+    | 5️⃣      | `<`, `>`, `<=`, `>=`, `==`, `!=` | Comparison                                   |
+    | 6️⃣      | `and`, `or`, `not`               | Logical operators                            |
+    | 7️⃣      | `=`                              | Assignment                                   |
+
+🐍 Python Functions
+====================
+
+    1️⃣ What is a Function?
+
+        A function is a block of organized, reusable code that performs a specific task.
+
+        It helps you avoid repeating the same code multiple times — you write it once and use it whenever needed.
+
+
+    🌱 Why Use Functions?
+
+        . Makes code modular (divides big problems into smaller parts).
+
+        . Improves code reuse (use same function many times).
+
+        . Enhances readability and debugging.
+
+        . Saves time and effort when making changes.
+
+    🧩 2️⃣ Types of Functions in Python
+
+        | Type                       | Description               | Example                                |
+        | -------------------------- | ------------------------- | -------------------------------------- |
+        | **Built-in Functions**     | Predefined in Python      | `print()`, `len()`, `input()`, `max()` |
+        | **User-defined Functions** | Created by the programmer | Custom functions like `def greet():`   |
+
+
+    ⚙️ 3️⃣ Defining and Calling a Function
+
+        def function_name():
+            # block of code
+
+        function_name() #calling funtion
+
+
+    🔹 Example:
+
+        def greet():
+            print("Hello! Welcome to Python Functions.")
+
+        greet()
+        greet()
+
+    🧮 4️⃣ Function with Parameters
+
+        Syntax
+
+            def function_name(parameter1, parameter2, ...):
+                # code block
+
+        ✅ Example:
+
+            def greet_user(name):
+                print("Hello", name, "Welcome to Python!")
+
+            greet_user("vipin")
+            greet_user("abin")
+
+
+    🎯 5️⃣ Function with Return Value
+
+
+        ✅ Syntax:
+
+            def function_name():
+                return value
+
+        ✅ Example:
+
+            def add(a, b):
+                
+                return a + b
+
+            result = add(5, 3)
+            print("Sum is:", result)
+
+    📦 6️⃣ Parameters vs Arguments
+
+        | Term          | Meaning                                        |
+        | ------------- | ---------------------------------------------- |
+        | **Parameter** | Variable listed inside function definition.    |
+        | **Argument**  | Actual value passed when calling the function. |
+
+    
+       🔹 Example:
+
+                def square(num):   # num → parameter
+                    return num ** 2
+
+                print(square(4))   # 4 → argument
+
+    🧠 7️⃣ Types of Arguments in Python
+
+            | Type                          | Description                          | Example                   |
+            | ----------------------------- | ------------------------------------ | ------------------------- |
+            | **Positional Arguments**      | Values passed in correct order       | `add(10, 20)`             |
+            | **Keyword Arguments**         | Specify parameter name               | `add(a=10, b=20)`         |
+            | **Default Arguments**         | Have a default value if not provided | `def greet(name="Guest")` |
+            | **Variable-length Arguments** | Accept multiple values               | `*args`, `**kwargs`       |
+
+    
+    🧩 8️⃣ Default Argument Example
+
+        def greet(name="Guest"):
+            print("Hello", name)
+
+        greet("hari")
+        greet()      # uses default value "Guest"
+
+    
+    🧩 9️⃣ Variable-length Arguments
+
+        ✅ Using *args → for multiple positional arguments
+
+        Example
+
+            def add_numbers(*numbers):
+                total = 0
+                for num in numbers:
+                    total += num
+                return total
+
+            print(add_numbers(2, 3, 4))
+
+
+    ✅ Using **kwargs → for multiple keyword arguments
+
+        def show_details(**info):
+            for key, value in info.items():
+                print(key, ":", value)
+
+        show_details(name="hari", age=25, city="Kochi")
+
+    
+    🧠  Anonymous (Lambda) Functions
+
+        A lambda function is a short, one-line function without a name.
+
+        ✅ Syntax:
+
+            lambda arguments: expression
+        
+        ✅ Example:
+
+            square = lambda x: x * x
+            print(square(5))   # Output: 25
+
+    🔚 Summary
+
+        | Concept             | Description                             |
+        | ------------------- | --------------------------------------- |
+        | `def` keyword       | Used to define a function               |
+        | `return` keyword    | Sends result back                       |
+        | `*args`, `**kwargs` | Handle variable arguments               |
+        | `lambda`            | Creates small anonymous functions       |
+        | Functions help you  | Reuse, organize, and simplify your code |
+
+
+
+🐍 Python String Notes
+=======================
+
+    1️⃣ What is a String?
+    ---------------------
+    A **string** is a sequence of characters enclosed in single or double quotes.
+
+    Example:
+    ```python
+    message = "Hello, world!"
+    name = 'Alice'
+    ```
+    Strings are **immutable**, meaning you cannot change them after creation.
+
+    ------------------------------------------------------------
+
+    2️⃣ String Operations
+    ----------------------
+    ✅ **Indexing and Slicing**
+
+    ```python
+    s = "Python"
+    print(s[0])    # P
+    print(s[-1])   # n
+    print(s[1:4])  # yth
+    ```
+
+    ✅ **Concatenation and Repetition**
+
+            a = "Hi"
+            b = "There"
+            print(a + b)  # HiThere
+            print(a * 3)  # HiHiHi
+
+    ✅ **Membership and Length**
+
+            print("th" in s)   # True
+            print(len(s))      # 6
+
+
+    ------------------------------------------------------------
+
+    3️⃣ Important String Methods
+    -----------------------------
+    | Method                                      | Description                                                                                              | Example                                                                   |
+    | ------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+    | `capitalize()`                              | Converts the first character to uppercase, rest to lowercase                                             | `"hello".capitalize()` → `"Hello"`                                        |
+    | `casefold()`                                | Converts string to case-folded (more aggressive lowercasing)                                             | `"ß".casefold()` → `"ss"`                                                 |
+    | `center(width, fillchar=' ')`               | Returns a centered string within given width, padded by `fillchar`                                       | `"hi".center(5, '*')` → `'*hi**'`                                         |
+    | `count(substring, start=0, end=len)`        | Returns number of occurrences of `substring` in the string                                               | `"banana".count("an")` → `2`                                              |
+    | `encode(encoding="utf-8", errors="strict")` | Returns encoded version of string (bytes)                                                                | `"hello".encode()` → `b'hello'`                                           |
+    | `endswith(suffix, start=0, end=len)`        | Returns `True` if string ends with the given suffix                                                      | `"Python".endswith("on")` → `True`                                        |
+    | `expandtabs(tabsize=8)`                     | Replaces tab characters `\t` with spaces, default tabsize is 8                                           | `"a\tb".expandtabs(4)` → `"a   b"`                                        |
+    | `find(sub, start=0, end=len)`               | Returns lowest index of substring if found, else -1                                                      | `"hello".find("l")` → `2`                                                 |
+    | `format(*args, **kwargs)`                   | A way to format strings using placeholders                                                               | `"Hello, {}!".format("Alice")` → `"Hello, Alice!"`                        |
+    | `format_map(mapping)`                       | Similar to `format()`, but takes a mapping (dict)                                                        | `"{name} is {age}".format_map({"name":"Bob","age":30})`                   |
+    | `index(sub, start=0, end=len)`              | Like `find()` but raises `ValueError` if not found                                                       | `"hello".index("z")` → raises error                                       |
+    | `isalnum()`                                 | Returns `True` if all characters are alphanumeric (letters + digits) and there is at least one character | `"abc123".isalnum()` → `True`                                             |
+    | `isalpha()`                                 | Returns `True` if all characters are alphabetic and there is at least one character                      | `"hello".isalpha()` → `True`                                              |
+    | `isdecimal()`                               | Returns `True` if all characters are decimal characters and there is at least one character              | `"123".isdecimal()` → `True`                                              |
+    | `isdigit()`                                 | Returns `True` if all characters are digits and there is at least one character                          | `"123".isdigit()` → `True`                                                |
+    | `isidentifier()`                            | Returns `True` if the string is a valid identifier (for variable names)                                  | `"my_var".isidentifier()` → `True`                                        |
+    | `islower()`                                 | Returns `True` if all cased characters are lower and there is at least one cased char                    | `"hello".islower()` → `True`                                              |
+    | `isnumeric()`                               | Returns `True` if all characters are numeric characters, and there is at least one character             | `"½".isnumeric()` → `True`                                                |
+    | `isprintable()`                             | Returns `True` if all characters are printable or the string is empty                                    | `"hello\n".isprintable()` → `False`                                       |
+    | `isspace()`                                 | Returns `True` if all characters are whitespace and there is at least one character                      | `"   ".isspace()` → `True`                                                |
+    | `istitle()`                                 | Returns `True` if the string is title cased (each word starts with uppercase followed by lowercase)      | `"This Is Title".istitle()` → `True`                                      |
+    | `isupper()`                                 | Returns `True` if all cased characters are uppercase and there is at least one cased char                | `"HELLO".isupper()` → `True`                                              |
+    | `join(iterable)`                            | Returns a string which is the concatenation of the strings in an iterable, separated by this string      | `",".join(["a","b","c"])` → `"a,b,c"`                                     |
+    | `ljust(width, fillchar=' ')`                | Returns a left-justified string of given width, padded by fillchar                                       | `"hi".ljust(5, '.')` → `"hi..."`                                          |
+    | `lower()`                                   | Returns a copy of the string converted to lowercase                                                      | `"Hello".lower()` → `"hello"`                                             |
+    | `lstrip(chars=None)`                        | Returns a copy with leading characters removed (spaces by default)                                       | `"  hello".lstrip()` → `"hello"`                                          |
+    | `maketrans(x, y=None, z=None)`              | Returns a translation table usable for `translate()`                                                     | `str.maketrans("ab","xy")`                                                |
+    | `partition(sep)`                            | Splits string at first occurrence of `sep`, returns a tuple (before, sep, after)                         | `"hello-python".partition("-")` → `("hello", "-", "python")`              |
+    | `replace(old, new, count=-1)`               | Returns a copy with all or up to `count` occurrences of `old` replaced by `new`                          | `"banana".replace("a","o")` → `"bonono"`                                  |
+    | `rfind(sub, start=0, end=len)`              | Returns highest index of substring if found, else -1                                                     | `"banana".rfind("an")` → `3`                                              |
+    | `rindex(sub, start=0, end=len)`             | Like `rfind()` but raises `ValueError` if not found                                                      | `"banana".rindex("z")` → Error                                            |
+    | `rjust(width, fillchar=' ')`                | Returns right-justified string of given width, padded by fillchar                                        | `"hi".rjust(5, '.')` → `"...hi"`                                          |
+    | `rpartition(sep)`                           | Splits string at last occurrence of `sep`, returns tuple (before, sep, after)                            | `"hello-python-world".rpartition("-")` → `("hello-python", "-", "world")` |
+    | `rsplit(sep=None, maxsplit=-1)`             | Splits string from the right; returns list                                                               | `"a b c".rsplit(" ", 1)` → `["a b", "c"]`                                 |
+    | `rstrip(chars=None)`                        | Returns a copy with trailing characters removed (spaces by default)                                      | `"hello  ".rstrip()` → `"hello"`                                          |
+    | `split(sep=None, maxsplit=-1)`              | Splits string into list of substrings                                                                    | `"a,b,c".split(",")` → `["a","b","c"]`                                    |
+    | `splitlines(keepends=False)`                | Splits at line boundaries; returns list of lines                                                         | `"a\nb\nc".splitlines()` → `["a","b","c"]`                                |
+    | `startswith(prefix, start=0, end=len)`      | Returns `True` if string starts with the prefix                                                          | `"Python".startswith("Py")` → `True`                                      |
+    | `strip(chars=None)`                         | Returns a copy with both leading and trailing characters removed                                         | `"  hello  ".strip()` → `"hello"`                                         |
+    | `swapcase()`                                | Returns a copy with uppercase characters converted to lowercase and vice versa                           | `"Hello".swapcase()` → `"hELLO"`                                          |
+    | `title()`                                   | Returns a title-cased version of the string (each word starts uppercase)                                 | `"hello world".title()` → `"Hello World"`                                 |
+    | `translate(table)`                          | Returns copy where each character has been mapped through translation table                              | `"hello".translate(str.maketrans("h","H"))` → `"Hello"`                   |
+    | `upper()`                                   | Returns a copy converted to uppercase                                                                    | `"hello".upper()` → `"HELLO"`                                             |
+    | `zfill(width)`                              | Returns numeric string left-filled with zeros to specified width                                         | `"42".zfill(5)` → `"00042"`                                               |
+
+
+    ------------------------------------------------------------
+
+    4️⃣ Quick Reference Tips
+    --------------------------
+    - Strings are immutable → all methods return a new string.
+    - Use `join()` for efficient string concatenation.
+    - Use `startswith()` and `endswith()` instead of slicing.
+    - Use `isidentifier()` to check valid variable names.
+    - `maketrans()` and `translate()` are useful for character mapping.
+
+    Example:
+
+        table = str.maketrans("aeiou", "12345")
+        print("apple".translate(table))  # 1ppl2
+
+    ------------------------------------------------------------
+
+    5️⃣ Summary
+    -------------
+
+        | Topic               | Key Points                           |
+        | ------------------- | ------------------------------------ |
+        | String type         | Sequence of characters, immutable    |
+        | Indexing & slicing  | Access/sub-select parts of string    |
+        | Built-in methods    | Dozens of useful string methods      |
+        | Immutability effect | Methods return new strings           |
+        | Performance tip     | Use `join()` for many concatenations |
+        | Validation helpers  | `isalnum()`, `isidentifier()`, etc.  |
+
+
+
+🐍 Python Collections (Data Structures)
+========================================
+
+    Python provides four built-in collection data types, each with its own characteristics and use cases.
+
+    | Type           | Ordered         | Mutable | Allows Duplicates | Syntax         |
+    | -------------- | --------------- | ------- | ----------------- | -------------- |
+    | **List**       | ✅ Yes           | ✅ Yes   | ✅ Yes             | `[ ]`          |
+    | **Tuple**      | ✅ Yes           | ❌ No    | ✅ Yes             | `( )`          |
+    | **Set**        | ❌ No            | ✅ Yes   | ❌ No              | `{ }`          |
+    | **Dictionary** | ✅ (Python 3.7+) | ✅ Yes   | ❌ (unique keys)   | `{key: value}` |
+
+
+    🧩 1. LIST
+    -----------
+    A list is an ordered, mutable (changeable) collection that allows duplicate elements.
+
+    🔹 Example:
+
+        fruits = ['apple', 'banana', 'cherry']
+        print(fruits)
+
+    🔹 Accessing Items:
+
+        print(fruits[0])      # 'apple'
+        print(fruits[-1])     # 'cherry'
+
+    🔹 Adding & Removing:
+
+        fruits.append('mango')      # Add at end
+        fruits.insert(1, 'orange')  # Add at position
+        fruits.remove('banana')     # Remove by value
+        fruits.pop()                # Remove last
+
+
+    🔹 Updating:
+
+        fruits[0] = 'kiwi'
+
+    🔹 Iterating:
+        
+        for f in fruits:
+            print(f)
+
+    🔹 List Methods Summary:
+
+        | Method      | Description       |
+        | ----------- | ----------------- |
+        | `append()`  | Add item to end   |
+        | `insert()`  | Add at index      |
+        | `remove()`  | Remove by value   |
+        | `pop()`     | Remove by index   |
+        | `sort()`    | Sort the list     |
+        | `reverse()` | Reverse order     |
+        | `count()`   | Count occurrences |
+        | `extend()`  | Join lists        |
+
+    
+    🪶 2. TUPLE
+
+        A tuple is an ordered, immutable collection — once created, it cannot be modified.
+
+        🔹 Example:
+
+            colors = ('red', 'green', 'blue')
+            print(colors)
+
+        🔹 Accessing:
+
+            print(colors[1])    # 'green'
+
+        🔹 Immutability:
+
+            colors[0] = 'black'   # ❌ Error — tuples cannot be changed
+
+        🔹 Tuple Packing & Unpacking:
+
+            person = ('Sajay', 30, 'Trainer')
+            name, age, job = person
+            print(name, age, job)
+
+    🌿 3. SET
+
+        A set is an unordered, mutable collection with no duplicate elements.
+
+        numbers = {1, 2, 3, 3, 4}
+        print(numbers)   # {1, 2, 3, 4}
+
+
+        🔹 Add / Remove:
+
+            numbers.add(5)
+            numbers.remove(2)
+            numbers.discard(10)  # No error if not found
+
+        🔹 Set Operations:
+
+            a = {1, 2, 3}
+            b = {3, 4, 5}
+
+            print(a.union(b))        # {1,2,3,4,5}
+            print(a.intersection(b)) # {3}
+            print(a.difference(b))   # {1,2}
+
+    
+    🗝️ 4. DICTIONARY
+
+        A dictionary stores data as key-value pairs.
+
+        🔹 Example:
+
+            student = {
+                'name': 'John',
+                'age': 21,
+                'course': 'Python'
+            }
+            print(student)
+
+        🔹 Accessing Values:
+
+            print(student['name'])
+            print(student.get('age'))
+
+        🔹 Adding / Updating / Deleting:
+
+            student['city'] = 'Kochi'
+            student['age'] = 22
+            student.pop('course')
+
+        🔹 Looping:
+
+            for key, value in student.items():
+                print(key, value)
+
+        🔹 Dictionary Methods Summary:
+
+            | Method     | Description             |
+            | ---------- | ----------------------- |
+            | `keys()`   | Returns all keys        |
+            | `values()` | Returns all values      |
+            | `items()`  | Returns key-value pairs |
+            | `pop()`    | Removes a key           |
+            | `update()` | Updates dictionary      |
+
+
+
+🧠 Lambda Function in Python
+
+
+    A lambda function is a small, anonymous (nameless) function written in a single line.
+    It is used when we need a simple function for a short time and don’t want to define it using def.
+
+    ✨ Syntax:
+
+        lambda arguments: expression
+
+    🧩 Example 1: Square of a Number
+
+        square = lambda x: x * x
+        print(square(5))   # Output: 25
+
+    🧩 Example 2: Add Two Numbers
+
+        add = lambda a, b: a + b
+        print(add(10, 20))   # Output: 30
+
+    🧩 Example 3: Check Even or Odd
+
+        check = lambda n: "Even" if n % 2 == 0 else "Odd"
+        print(check(7))   # Output: Odd
+
+🧠 List Comprehension in Python
+
+    ✅ What is List Comprehension?
+
+        List comprehension is a short and powerful way to create lists using a single line of code.
+        It makes your code cleaner, faster, and more readable.
+
+    🔹 Syntax
+
+        [expression for item in iterable if condition]
+
+    
+    🌟 Examples
+
+
+        1️⃣ Create a list of numbers
+
+            nums = [x for x in range(6)]
+            print(nums)   # [0, 1, 2, 3, 4, 5]
+
+        2️⃣ Square of numbers
+
+            squares = [x*x for x in range(1, 6)]
+            print(squares)  # [1, 4, 9, 16, 25]
+
+🧠 Dictionary Comprehension in Python
+
+
+        What is Dictionary Comprehension?
+
+            Dictionary comprehension is a concise and elegant way to create dictionaries in a single line using a loop.
+
+        
+            Syntax:
+                    { key_expression : value_expression  for item in iterable  if condition }
+
+            Example:
+
+                squares = {x: x*x for x in range(1, 6)}
+
+                print(squares)
+
+
+
+📁 Python File Input & Output (File I/O)
+
+
+    What is File Handling?
+
+        File handling in Python allows you to create, read, write, and modify files stored on your computer.
+
+    
+        To work with files, Python provides a built-in function:
+
+            open()
+
+    🧲 Syntax of open()
+
+        file = open("filename", "mode")
+
+    Common File Modes:
+
+        | Mode   | Description                       |
+        | ------ | --------------------------------- |
+        | `"r"`  | Read mode (default)               |
+        | `"w"`  | Write mode (overwrites file)      |
+        | `"a"`  | Append mode (adds to end of file) |
+        | `"r+"` | Read and write                    |
+        | `"w+"` | Write and read (overwrites file)  |
+        | `"a+"` | Append and read                   |
+
+
+
+    📖 Reading a File
+
+        Example
+
+            file = open("data.txt", "r")
+            content = file.read()
+            print(content)
+            file.close()
+
+        Other Reading Methods:
+
+            | Method        | Usage                     |
+            | ------------- | ------------------------- |
+            | `read()`      | Reads the whole file      |
+            | `read(n)`     | Reads first n characters  |
+            | `readline()`  | Reads one line            |
+            | `readlines()` | Reads all lines into list |
+
+        Example:
+
+        file = open("data.txt", "r")
+        print(file.readline())
+        print(file.readlines())
+        file.close()
+
+
+    ✍ Writing to a File
+
+        file = open("data.txt", "w")
+        file.write("Hello Python!\n")
+        file.close()
+
+        📌 If data.txt exists → content will be overwritten
+        📌 If not exists → new file created
+
+    
+    ➕ Appending to a File
+
+        Example
+
+        file = open("data.txt", "a")
+        file.write("New line added.\n")
+        file.close()
+
+
+⚠ Python Error Handling (Exception Handling)
+
+    What is Error Handling?
+
+        Error handling allows us to manage errors in a program so that the program doesn’t crash unexpectedly and
+        we can show a meaningful message to the user.
+
+    Python uses Exceptions to handle errors.
+
+    🧠 Common Types of Errors
+
+
+        | Type                | Description             | Example           |
+        | ------------------- | ----------------------- | ----------------- |
+        | `SyntaxError`       | Wrong syntax            | `print("Hello"`   |
+        | `ZeroDivisionError` | Divide by zero          | `10/0`            |
+        | `TypeError`         | Wrong type of data used | `"a" + 5`         |
+        | `ValueError`        | Wrong value             | `int("abc")`      |
+        | `IndexError`        | Invalid list index      | `list[10]`        |
+        | `KeyError`          | Key not found in dict   | `d['age']`        |
+        | `FileNotFoundError` | File does not exist     | `open("xyz.txt")` |
+
+    
+    🧰 try – except Block
+
+        Basic structure:
+
+                try:
+                # Code that may cause exception
+            except:
+                # Code to handle error
+
+
+        Example:
+
+            try:
+                x = 10 / 0
+            except:
+                print("Error occurred!")
+
+        🔀 Multiple except Blocks
+
+
+            try:
+                num = int("abc")
+            except ValueError:
+                print("Invalid integer!")
+            except TypeError:
+                print("Type mismatch!")
+
+        
+        🧹 finally Block:
+
+            Runs always, whether error occurs or not.
+
+            try:
+                file = open("data.txt", "r")
+            except FileNotFoundError:
+                print("File not found!")
+            finally:
+                print("Execution complete!")
+
+        ➕ else Block
+
+            Runs when no exception occurs
+
+            try:
+                x = 10 / 2
+            except ZeroDivisionError:
+                print("Cannot divide by zero")
+            else:
+                print("Division successful")
+
+
+        🎁 Raise Your Own Error
+
+            Use raise to manually throw an exception.
+
+            age = -5
+
+            if age < 0:
+
+                raise ValueError("Age cannot be negative")
+
+
+
