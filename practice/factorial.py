@@ -3,6 +3,7 @@
 #  0 1 1 2 3 
 #      p c n
 
+# program to find factorial
 class Factorial:
 
     def solution(self,number):

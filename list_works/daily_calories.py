@@ -1,5 +1,7 @@
 
 
+# calculate daily calories
+
 
 daily_calories=[1550,1670,1700,1800,1760,1678,2000]
 
