@@ -1,0 +1,12 @@
+[
+    {"rol":123,"name":"hari","gender":"male","course":"django"},
+    {"rol":124,"name":"harish","gender":"male","course":"django"},
+    {"rol":125,"name":"harish krishna","gender":"male","course":"testing"},
+    {"rol":126,"name":"jibin","gender":"male","course":"testimg"},
+    {"rol":127,"name":"tibin","gender":"male","course":"ds"},
+    {"rol":128,"name":"tom","gender":"male","course":"ds"},
+    {"rol":129,"name":"jiny","gender":"female","course":"ai"},
+    {"rol":130,"name":"jimy","gender":"female","course":"qa"},
+    {"rol":131,"name":"jth","gender":"male","course":"qa"},
+    {"rol":132,"name":"james","gender":"male","course":"mearn"}
+]
